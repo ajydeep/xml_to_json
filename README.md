@@ -1,6 +1,6 @@
 Here's a professional **README.md** file for your XML-to-JSON converter project with S3 integration:
 
-```markdown
+
 # DataBridge: XML to JSON Converter with AWS S3
 
 ![Node.js](https://img.shields.io/badge/Node.js-18.x-green)
