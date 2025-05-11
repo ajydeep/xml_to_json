@@ -1,5 +1,3 @@
-
-
 # DataBridge: XML to JSON Converter with AWS S3
 
 ![Node.js](https://img.shields.io/badge/Node.js-18.x-green)

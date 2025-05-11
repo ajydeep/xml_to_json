@@ -148,9 +148,26 @@
           <a href="${result.downloadUrl}" target="_blank" id="downloadLink">JSON</a>
 
           <p>(expires in <span class="countdown" id="countdown">5:00</span>):</p>
+
+          <button id="downloadJsonBtn" style="margin-top: 10px: padding: 10px 20px; background-color: #2980b9; color: white; border: none; border-radium: 4px;">
+             Download JSON
+          </button>
+          
           <h4>Preview:</h4>
           <pre>${JSON.stringify(result.jsonPreview, null, 2)}</pre>
         `;
+
+        document.getElementById('downloadJsonBtn').addEventListener('click', () => {
+          const jsonData = JSON.stringify(result.jsonPreview, null, 2);
+          const blob = new Blob([jsonData], { type: 'application/json' });
+          const url = URL.createObjectURL(blob);
+          const a = document.createElement('a');
+          a.href = url;
+          a.download = 'converted.json';
+          a.click();
+          URL.revokeObjectURL(url); 
+        });
+
 
         let timeLeft = 300;
         const timer = setInterval(() => {
