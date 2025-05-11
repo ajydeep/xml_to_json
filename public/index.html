@@ -148,6 +148,11 @@
           <a href="${result.downloadUrl}" target="_blank" id="downloadLink">JSON</a>
 
           <p>(expires in <span class="countdown" id="countdown">5:00</span>):</p>
+
+          <button id="downloadJsonBtn" style="margin-top: 10px: padding: 10px 20px; background-color: #2980b9; color: white; border: none; border-radium: 4px;">
+             Download JSON
+          </button>
+          
           <h4>Preview:</h4>
           <pre>${JSON.stringify(result.jsonPreview, null, 2)}</pre>
         `;
