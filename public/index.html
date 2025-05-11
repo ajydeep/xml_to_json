@@ -157,6 +157,18 @@
           <pre>${JSON.stringify(result.jsonPreview, null, 2)}</pre>
         `;
 
+        document.getElementById('downloadJsonBtn').addEventListener('click', () => {
+          const jsonData = JSON.stringify(result.jsonPreview, null, 2);
+          const blob = new Blob([jsonData], { type: 'application/json' });
+          const url = URL.createObjectURL(blob);
+          const a = document.createElement('a');
+          a.href = url;
+          a.download = 'converted.json';
+          a.click();
+          URL.revokeObjectURL(url); 
+        });
+
+
         let timeLeft = 300;
         const timer = setInterval(() => {
           timeLeft--;
